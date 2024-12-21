@@ -1,0 +1,45 @@
+.scrollAnimation {
+  animation: scroll 150s linear infinite; /* Slider animation speed for desktop */
+  display: flex;
+  white-space: nowrap;
+  opacity: 1;
+  transition: 0.2s; /* Smooth opacity and other transitions */
+}
+
+.paused {
+  animation-play-state: paused; /* Pause the animation */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%); /* Start at the initial position */
+  }
+  100% {
+    transform: translateX(
+      -50%
+    ); /* Move 50% to the left to create a continuous loop */
+  }
+}
+
+.collabsText {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  opacity: 0; /* Initially hidden */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  transition: 0.2s; /* Smooth transition for opacity changes */
+}
+
+@media screen and (max-width: 1025px) {
+  .scrollAnimation {
+    animation: scroll 120s linear infinite; /* Slider animation speed for smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .scrollAnimation {
+    animation: scroll 80s linear infinite; /* Slider animation speed for mobile screens */
+  }
+}
